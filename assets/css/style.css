@@ -1,0 +1,111 @@
+/* PSEUDO CODING */
+/* Everything is centered except for timer and view high scores link*/
+/* Everything is in columns*/
+/* timer is kinda styled*/
+    /* Buttons*/
+        /* All buttons are in color "indigo"*/
+        /* When you hover and/or click they turn color "orchid"*/
+        /* Button text is white */
+    /*Headers*/
+        /* Text color is all black*/
+    /*High scores link*/
+        /* Styled opposite of timer as far as placement*/
+        /* always in color "orchid*/
+        /* not bolded */
+/**/
+:root{
+    --orc: orchid;
+    --ind: indigo;
+    --blk: black;
+    --wte: white; 
+}
+
+/*Banner section starts*/
+.banner {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.timer h4{
+ display: block;
+ width: fit-content;
+ right: 100%;
+}
+.high-scores{
+    position: relative;
+    width: max-content;
+    color: var(--orc);
+}
+/*banner section ends*/
+
+
+/*general styling*/
+.card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+.btn { /*this sets default button styling*/
+    color: var(--wte);
+    background-color: var(--ind);
+    border-radius: 15%;
+}
+.btn:hover {
+    color: var(--wte);
+    background-color: var(--orc);
+}
+.q-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.q-options{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn-q-opt{
+    color: var(--wte);
+    background-color: var(--ind);
+    border-radius: 15%;
+}
+.btn-q-opt:hover{
+    color: var(--wte);
+    background-color: var(--orc);
+}
+.page-styling{
+    width: 600px;
+}
+/*general styling ends */
+
+
+/*start page styling*/
+.start-page-header{ 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.start-page-body h3, .start-page-footer {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding-bottom: 1%;
+}
+/*start page styling ends*/
+
+
+/*Second page AKA first question styling starts*/
+
+/*Second page AKA first question styling ends*/
+
+
+/*Third page AKA second question styling starts*/
+
+
+
