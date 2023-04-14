@@ -20,12 +20,30 @@
     <!-- PSUEDO CODING-->
     <!--HTML SPECIFIC-->
 
-  
+
     <main>
-        <div id="quiz">
-            <button id="startBtn">START</button>
+        <div id="quiz"> <!-- "container"-->
+            <div id="startPage">
+                <div class="introContent">
+                    <h1> Coding Quiz Challenge</h1>
+                    <h4>Try to answer the following code-related questions within the time limit <br>
+                    Keep in mind that inccorec.int answers will penalize your score/time by ten seconds!</h4>
+                </div>
+                <div class="controls">
+                    <button id="startBtn" class="startBtn btn">START</button>
+                </div>
+            </div>
+            <div id="questionContainer" class="hide">
+                <div id="question" class="hide">Question</div>
+                <div id="answer-next-buttons" class="answer-next-buttons btn-hide btn-grid"> 
+                    <button class="btn">1</button><!--also acts as a next button-->
+                    <button class="btn">2</button><!--also acts as a next button-->
+                    <button class="btn">3</button><!--also acts as a next button-->
+                    <button class="btn">4</button><!--also acts as a next button-->
+                </div>
+            </div>
         </div>
-        <div id="end-game">
+        <div id="end-game" class="hide">
             <h2>Game Over</h2>
 
             <form id="score">
