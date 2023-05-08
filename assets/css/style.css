@@ -85,10 +85,12 @@ h1 {
 .hide {
     /*display: none;*/
     visibility: hidden;
+    width: 0vw;
+    height: 0vh;
 }
 .bringUp{
     position: fixed;
-    
+
 }
 .show {
     display: flex;
@@ -140,11 +142,12 @@ h1 {
 
 /*end game styling*/
 #end-game {
+    width: 100vh;
+    height: auto;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-content: center;
-    align-items: center;
 }
 #score {
     display: flex;

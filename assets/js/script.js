@@ -1,5 +1,6 @@
 var timeEl = document.querySelector("#time");
 var secondsLeft = 76; //so that it starts counting down from 75 seconds
+var timerInterval;
 
 var startBtn = document.querySelector("#startBtn");
 startBtn.addEventListener("click", startGame); //adds event listener to start button to start the timer
@@ -8,7 +9,7 @@ startBtn.addEventListener("click", startGame); //adds event listener to start bu
 function startTimer(event) {
     //event.preventDefault();//prevents timer from starting automatically
     // Sets interval in variable
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = secondsLeft;
     
@@ -147,6 +148,7 @@ function endGame() {
     questionText.classList.add("hide");
     correctText.classList.add("hide");
     wrongText.classList.add("hide");
+    quizArea.classList.add("hide");
     endGamePage.classList.remove("hide");
     //stopTimer();
   }
