@@ -23,6 +23,7 @@
 /*Banner section starts*/
 .banner {
     display: flex;
+    padding: 5vh;
     width: 100%;
     height: auto;
     flex-direction: row;
@@ -45,24 +46,49 @@
 /*general styling*/
 #quiz {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 80vh;
+    height: 70vh;
     padding: 0;
     
 }
+h1 {
+    justify-content: center;
+    display: flex;
+}
 #question {
     color:black;
+    justify-content: center;
+}
+.controls{
+    display: flex;
+    justify-content: center;
 }
 .btn { /*this sets default button styling*/
     color: var(--wte);
     background-color: var(--ind);
     border-radius: 15%;
 }
+#questionContainer {
+    position: fixed;
+}
+#correctTextDisplay {
+    position: relative;
+    bottom: -11vh;
+}
+#wrongTextDisplay {
+    position: relative;
+    bottom: -15vh;
+}
 .hide {
     /*display: none;*/
     visibility: hidden;
+}
+.bringUp{
+    position: fixed;
+    
 }
 .show {
     display: flex;
@@ -112,13 +138,23 @@
 }
 /*start page styling ends*/
 
-
-/*Second page AKA first question styling starts*/
-
-/*Second page AKA first question styling ends*/
-
-
-/*Third page AKA second question styling starts*/
+/*end game styling*/
+#end-game {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+#score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#score h4 {
+    padding: 5%;
+}
 
 
 

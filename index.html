@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="banner">
-        <div class="high-scores">
+        <div class="high-scores" id="high-score-page">
             <h4>View High Scores</h4><!-- INSERT LINK  tO HIGH SCORES HERE -->
         </div>
         <div class="timer">
@@ -36,20 +36,29 @@
             <div id="questionContainer" class="hide">
                 <div id="question" class="hide">Question</div>
                 <div id="answer-next-buttons" class="answer-next-buttons btn-hide btn-grid"> 
-                    <button class="btn">1</button><!--also acts as a next button-->
-                    <button class="btn">2</button><!--also acts as a next button-->
-                    <button class="btn">3</button><!--also acts as a next button-->
-                    <button class="btn">4</button><!--also acts as a next button-->
+                    <button class="btn answer">1</button><!--also acts as a next button-->
+                    <button class="btn answer">2</button><!--also acts as a next button-->
+                    <button class="btn answer">3</button><!--also acts as a next button-->
+                    <button class="btn answer">4</button><!--also acts as a next button-->
                 </div>
             </div>
+            <div id="correctTextDisplay" class="hide">Correct!</div>
+            <div id="wrongTextDisplay" class="hide">Wrong!</div>
         </div>
         <div id="end-game" class="hide">
-            <h2>Game Over</h2>
+            <h1>Game Over</h1>
 
             <form id="score">
-                <input>
+                <h2>All done!</h2>
+                <h4>Your final score is <span id=finalScore>00</span></h4>
+                <h4>Enter initials: <input id="initialInput"></h4>
                 <button id="saveScoreBtn">Save Score</button>
             </form>
+        </div>
+        <div id="high-score-page">
+            <ol id="highScoreList">
+                
+            </ol>
         </div>
     </main>
     
