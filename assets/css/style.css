@@ -57,6 +57,7 @@
 h1 {
     justify-content: center;
     display: flex;
+    padding: 2%;
 }
 #question {
     color:black;
@@ -69,18 +70,22 @@ h1 {
 .btn { /*this sets default button styling*/
     color: var(--wte);
     background-color: var(--ind);
-    border-radius: 15%;
+    border: currentColor;
+    border-radius: 15px;
+    padding: 2%;
+    margin: 2%;
 }
 #questionContainer {
     position: fixed;
 }
 #correctTextDisplay {
-    position: relative;
-    bottom: -11vh;
+    position: fixed;
+    bottom: 15vh;
 }
 #wrongTextDisplay {
-    position: relative;
-    bottom: -15vh;
+    position: fixed;
+    bottom: 15vh;
+    /* i want to bold this */
 }
 .hide {
     /*display: none;*/
@@ -142,12 +147,14 @@ h1 {
 
 /*end game styling*/
 #end-game {
-    width: 100vh;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    position: fixed;
+    width: 50vw;
+    height: 50vh;
+    right: 25%;
+    bottom: 10%;
+    border: 2px solid var(--orc);
+    border-radius: 15px;
 }
 #score {
     display: flex;
@@ -156,7 +163,7 @@ h1 {
     align-items: center;
 }
 #score h4 {
-    padding: 5%;
+    padding: 1%;
 }
 
 

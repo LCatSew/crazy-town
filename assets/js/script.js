@@ -6,8 +6,22 @@ var startBtn = document.querySelector("#startBtn");
 startBtn.addEventListener("click", startGame); //adds event listener to start button to start the timer
 //startBtn.addEventListener("click", startGame); //adds event listener to start button to start the game
 
+function startGame() {
+  console.log("started");
+
+  startBtn.classList.add("hide");
+  quizTitlePage.classList.add("hide");
+  questionContent.classList.remove("hide");
+  questionText.classList.remove("hide");
+  questionsArray = questionsArray.sort(() => Math.random() -.5);
+  currentQuestionIndex = 0;
+
+  showQuestion();
+  generateAnswerChoices();
+  startTimer();//line 24
+}
+
 function startTimer(event) {
-    //event.preventDefault();//prevents timer from starting automatically
     // Sets interval in variable
     timerInterval = setInterval(function() {
       secondsLeft--;
@@ -21,8 +35,6 @@ function startTimer(event) {
         stopTimer();
       }
     } ,1000);
-    //startGame();
-
 }
 
 function stopTimer() {
@@ -32,7 +44,6 @@ function stopTimer() {
 
 //2. The quiz options
 var quizArea = document.getElementById("quiz");
-var startBtn = document.getElementById("startBtn");
 var questionContent = document.getElementById("questionContainer");
 var questionText = document.getElementById("question");
 var questionsBtn = document.getElementById("answer-next-buttons");
@@ -73,48 +84,22 @@ var questionsArray = [
     }
 ]
 
-
-function startGame() {
-  console.log("started");
-
-  startBtn.classList.add("hide");
-  quizTitlePage.classList.add("hide");
-  questionContent.classList.remove("hide");
-  questionText.classList.remove("hide");
-  questionsArray = questionsArray.sort(() => Math.random() -.5);
-  currentQuestionIndex = 0;
-
-  showQuestion();
-  generateAnswerChoices();
-  startTimer();
-}
-
 function generateNextQuestion() {
-  validateAnswer(this.textContent);//
+  validateAnswer(this.textContent);//line 114
   currentQuestionIndex++;
-  showQuestion();
-  generateAnswerChoices();
+  showQuestion();//line 98
+  generateAnswerChoices();//line 102
   if (questionsArray.length <= currentQuestionIndex + 1) {
-    endGame();
-    stopTimer();
+    endGame();//line 127
+    stopTimer();//line 40
   }
 }
 
 function showQuestion(){
   questionText.innerText = questionsArray[currentQuestionIndex].question;
-
-  //if (questionsArray[lastIndexOf].question) {
-  //  questionContent.classList.add("hide");
-  //  questionText.classList.add("hide");
-  //  correctText.classList.add("hide");
-  //  wrongText.classList.add("hide");
-  //  endGamePage.classList.remove("hide");
-  //}
 }
 
 function generateAnswerChoices() {
-  // for loop i < questions[currentQuestion].answerChoices.length
-  // create an element (button)
   console.log(questionsArray[currentQuestionIndex]);
   for (i=0; i<answerText.length; i++){
     answerText[i].textContent = questionsArray[currentQuestionIndex].answerChoices[i];
@@ -140,9 +125,7 @@ function validateAnswer(buttonText) {
 var endGamePage = document.getElementById("end-game");
 var finalScoreText = document.getElementById("finalScore");
 function endGame() {
-    
   // end game whether it reaches the end of the quiz or time runs out
-  // display none quiz area and display end game div
   if (secondsLeft == 0){
     questionContent.classList.add("hide");
     questionText.classList.add("hide");
@@ -150,14 +133,13 @@ function endGame() {
     wrongText.classList.add("hide");
     quizArea.classList.add("hide");
     endGamePage.classList.remove("hide");
-    //stopTimer();
   }
-  //if (questionsArray[currentQuestionIndex].){}
   if (questionsArray.length) {
     questionContent.classList.add("hide");
     questionText.classList.add("hide");
     correctText.classList.add("hide");
     wrongText.classList.add("hide");
+    quizArea.classList.add("hide");
     endGamePage.classList.remove("hide");
   }
   
@@ -172,29 +154,25 @@ function saveScore(event) {
   event.preventDefault();
   
   var scoreObj = {
-    intials: initialEl.value,
+    initials: initialEl.value,
     score: secondsLeft,
   }
-  console.log(scoreObj);
   // sets the score into local storage
-  localStorage.setItem("score", JSON.stringify(scoreObj));
-
+  localStorage.setItem("scoreObj", JSON.stringify(scoreObj));
+  endGamePage.classList.add("hide");
   getScore();
 }
 
 var highScoreList = document.getElementById("highScoreList");
 
 function getScore() {
-
   // get high score out of localstorage
-  var score = JSON.parse(localStorage.getItem("score"));
+  var score = JSON.parse(localStorage.getItem("scoreObj"));
   // display to end game div
   console.log(score);
   var highScoreItemEl = document.createElement('li');
 
-  highScoreItemEl.textContent = score;
-
+  highScoreItemEl.textContent = score.initials + " : " + score.score;
   highScoreList.appendChild(highScoreItemEl);
-  
 }
 //}
