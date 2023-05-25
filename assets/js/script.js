@@ -4,7 +4,6 @@ var timerInterval;
 
 var startBtn = document.querySelector("#startBtn");
 startBtn.addEventListener("click", startGame); //adds event listener to start button to start the timer
-//startBtn.addEventListener("click", startGame); //adds event listener to start button to start the game
 
 function startGame() {
   console.log("started");
@@ -85,12 +84,12 @@ var questionsArray = [
 ]
 
 function generateNextQuestion() {
-  validateAnswer(this.textContent);//line 114
+  validateAnswer(this.textContent);//line 110
   currentQuestionIndex++;
-  showQuestion();//line 98
-  generateAnswerChoices();//line 102
+  showQuestion();//line 97
+  generateAnswerChoices();//line 101
   if (questionsArray.length <= currentQuestionIndex + 1) {
-    endGame();//line 127
+    endGame();//line 125
     stopTimer();//line 40
   }
 }
@@ -100,7 +99,6 @@ function showQuestion(){
 }
 
 function generateAnswerChoices() {
-  console.log(questionsArray[currentQuestionIndex]);
   for (i=0; i<answerText.length; i++){
     answerText[i].textContent = questionsArray[currentQuestionIndex].answerChoices[i];
     answerText[i].addEventListener("click", generateNextQuestion);
@@ -147,7 +145,7 @@ function endGame() {
 }
 
 var initialEl = document.getElementById("initialInput");
-var saveBtn = document.getElementById("saveScoreBtn")
+var saveBtn = document.getElementById("saveScoreBtn");
 saveBtn.addEventListener("click", saveScore);
 
 function saveScore(event) {
@@ -162,10 +160,17 @@ function saveScore(event) {
   endGamePage.classList.add("hide");
   getScore();
 }
+var highScoreLink = document.getElementById("high-score-link");
+highScoreLink.addEventListener("click", getScore);
 
 var highScoreList = document.getElementById("highScoreList");
 var highScorePage = document.getElementById("high-score-page");
 function getScore() {
+  questionContent.classList.add("hide");
+  questionText.classList.add("hide");
+  correctText.classList.add("hide");
+  wrongText.classList.add("hide");
+  quizArea.classList.add("hide");
   highScorePage.classList.remove("hide");
   // get high score out of localstorage
   var score = JSON.parse(localStorage.getItem("scoreObj"));
@@ -176,4 +181,4 @@ function getScore() {
   highScoreItemEl.textContent = score.initials + " : " + score.score;
   highScoreList.appendChild(highScoreItemEl);
 }
-//}
+
