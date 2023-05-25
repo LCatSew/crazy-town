@@ -10,19 +10,15 @@
 </head>
 <body>
     <div class="banner">
-        <div class="high-scores" id="high-score-page">
+        <div class="high-scores"><!-- id="high-score-page"-->
             <h4>View High Scores</h4><!-- INSERT LINK  tO HIGH SCORES HERE -->
         </div>
         <div class="timer">
             <h4>Time <span id="time">00</span></h4>
         </div>
     </div>
-    <!-- PSUEDO CODING-->
-    <!--HTML SPECIFIC-->
-
-
     <main>
-        <div id="quiz"> <!-- "container"-->
+        <div id="quiz"> <!--container-->
             <div id="startPage">
                 <div class="introContent">
                     <h1> Coding Quiz Challenge</h1>
@@ -44,7 +40,7 @@
             </div>
             <div id="correctTextDisplay" class="hide">Correct!</div>
             <div id="wrongTextDisplay" class="hide">Wrong!</div>
-        </div>
+        </div> <!-- end of quiz container -->
         <div id="end-game" class="hide">
             <h1>Game Over</h1>
 
@@ -55,40 +51,12 @@
                 <button id="saveScoreBtn">Save Score</button>
             </form>
         </div>
-        <div id="high-score-page">
+        <div id="high-score-page" class ="hide">
             <ol id="highScoreList">
                 
             </ol>
         </div>
     </main>
-    
-    <!-- STEP THREE -->
-    <!-- Make the page functional - JavaScript -->
-    <!-- 1. Create the timer 
-            a. use 4.9 and 4.10 as reference
-            b. when they select a wrong answer, the time goes down by -10 seconds
-            c. the timer starts when the start button is selected [DONE]
-            d. the timer ends when the quiz is finished
-            e. the timer dissappears when you are in the highscores page
-
-        2. The quiz options
-            a. when the CORRECT option is selected, hidden text appears that says
-                Correcty! 
-                -use 4.13 + 4.14 as references
-            b. when the WRONG option is selected, hidden text appears that says
-                Wrong
-            c. when the WRONG option is selected, the time is affected
-            d. when a selection is made, after the hidden text appears, the quiz will go to the next question
-        3. The final score page
-            a. The final score is the same as the amount of time left
-            b. the score is saved in local storage
-            c. the intials are saved in local storage
-        4. The high score page
-            a. the page displays high scores in descending order
-            b. the local storage is displayed
-            c. you can retake the quiz
-            d. you can clear the local storagr
-    -->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

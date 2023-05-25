@@ -1,18 +1,3 @@
-/* PSEUDO CODING */
-/* Everything is centered except for timer and view high scores link*/
-/* Everything is in columns*/
-/* timer is kinda styled*/
-    /* Buttons*/
-        /* All buttons are in color "indigo"*/
-        /* When you hover and/or click they turn color "orchid"*/
-        /* Button text is white */
-    /*Headers*/
-        /* Text color is all black*/
-    /*High scores link*/
-        /* Styled opposite of timer as far as placement*/
-        /* always in color "orchid*/
-        /* not bolded */
-/**/
 :root{
     --orc: orchid;
     --ind: indigo;
@@ -52,7 +37,6 @@
     width: 100vw;
     height: 70vh;
     padding: 0;
-    
 }
 h1 {
     justify-content: center;
@@ -81,14 +65,14 @@ h1 {
 #correctTextDisplay {
     position: fixed;
     bottom: 15vh;
+    font-weight: 600;
 }
 #wrongTextDisplay {
     position: fixed;
     bottom: 15vh;
-    /* i want to bold this */
+    font-weight: 600;
 }
 .hide {
-    /*display: none;*/
     visibility: hidden;
     width: 0vw;
     height: 0vh;
@@ -165,6 +149,26 @@ h1 {
 #score h4 {
     padding: 1%;
 }
+/*end game styling ends*/
 
-
-
+/* high score page styling */
+#high-score-page {
+    height: auto;
+    position: fixed;
+    width: 50vw;
+    height: 50vh;
+    right: 25%;
+    bottom: 10%;
+    border: 2px solid var(--orc);
+    border-radius: 15px;
+}
+#highScoreList {
+    position: relative;
+    width: 80%;
+    height: auto;
+    left: 50%;
+}
+#highScoreList li {
+    color: var(--ind);
+    font-size: 35px;
+}

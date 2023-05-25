@@ -164,8 +164,9 @@ function saveScore(event) {
 }
 
 var highScoreList = document.getElementById("highScoreList");
-
+var highScorePage = document.getElementById("high-score-page");
 function getScore() {
+  highScorePage.classList.remove("hide");
   // get high score out of localstorage
   var score = JSON.parse(localStorage.getItem("scoreObj"));
   // display to end game div
