@@ -2,6 +2,34 @@ var timeEl = document.querySelector("#time");
 var secondsLeft = 76; //so that it starts counting down from 75 seconds
 var timerInterval;
 
+var questionsArray = [
+  { // [0]
+    question: "Commonly used data types do NOT include: ",
+    answerChoices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
+    correctAnswer: "3. alerts"
+    },
+  { // [1]
+    question: "The condition in an if/else statement is enclosed with____.",
+    answerChoices: [ "1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets"],
+    correctAnswer: "2. curly brackets"
+    },
+  { // [2]
+    question: "Arrays in JavaScript can be used to store____.",
+    answerChoices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+    correctAnswer: "4. all of the above"
+    },
+  { // [3]
+    question: "String values must be enclosed within ____ when being assigned to variables",
+    answerChoices: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis"],
+    correctAnswer: "3. quotes"
+    },
+  { // [4]
+    question: "A very useful tool used during developement and debugging for printing content to the debuuger is:",
+    answerChoices: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+    correctAnswer: "4. console.log"
+    }
+]
+
 var startBtn = document.querySelector("#startBtn");
 startBtn.addEventListener("click", startGame); //adds event listener to start button to start the timer
 
@@ -55,33 +83,7 @@ var score; //this will be the seconds left
 var shuffledQuestions, currentQuestionIndex;
 
 
-var questionsArray = [
-  { // [0]
-    question: "Commonly used data types do NOT include: ",
-    answerChoices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
-    correctAnswer: "3. alerts"
-    },
-  { // [1]
-    question: "The condition in an if/else statement is enclosed with____.",
-    answerChoices: [ "1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets"],
-    correctAnswer: "2. curly brackets"
-    },
-  { // [2]
-    question: "Arrays in JavaScript can be used to store____.",
-    answerChoices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-    correctAnswer: "4. all of the above"
-    },
-  { // [3]
-    question: "String values must be enclosed within ____ when being assigned to variables",
-    answerChoices: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis"],
-    correctAnswer: "3. quotes"
-    },
-  { // [4]
-    question: "A very useful tool used during developement and debugging for printing content to the debuuger is:",
-    answerChoices: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
-    correctAnswer: "4. console.log"
-    }
-]
+
 
 function generateNextQuestion() {
   validateAnswer(this.textContent);//line 110
@@ -101,7 +103,9 @@ function showQuestion(){
 function generateAnswerChoices() {
   for (i=0; i<answerText.length; i++){
     answerText[i].textContent = questionsArray[currentQuestionIndex].answerChoices[i];
-    answerText[i].addEventListener("click", generateNextQuestion);
+    // answerText[i].addEventListener("click", generateNextQuestion);
+    answerText[i].removeEventListener("click", generateNextQuestion); // Remove event listener
+    answerText[i].addEventListener("click", generateNextQuestion); // Attach new event listener
   }
 }
 var correctText = document.getElementById("correctTextDisplay");
@@ -182,3 +186,25 @@ function getScore() {
   highScoreList.appendChild(highScoreItemEl);
 }
 
+//clear history function
+// var clearHistoryBtnEl = document.getElementById("clearHistoryBtn");
+// clearHistoryBtnEl.addEventListener("click", clearHistory);
+
+//restart game event listener
+var startOverBtnEl = document.querySelector("#startOverBtn");
+startOverBtnEl.addEventListener("click", startGameOver);
+
+function startGameOver() {
+  highScorePage.classList.add("hide");
+  quizArea.classList.remove("hide");
+  questionContent.classList.remove("hide");
+  questionText.classList.remove("hide");
+  startBtn.classList.add("hide");
+  quizTitlePage.classList.add("hide");
+  clearInterval(timerInterval);
+
+  showQuestion();
+  generateNextQuestion();
+  generateAnswerChoices();
+  startTimer();
+}

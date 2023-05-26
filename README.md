@@ -1,23 +1,37 @@
 # crazy-town
-Module 4 HMWK assignment
 
-## User Story
+## Description
+    
+- My motivation to build this project was to test my knowledge of javascript, HTML, and CSS into one cohesive project.
+- I built this project so others could test their coding  knowledge, save their scores, and see their improvements over time.
+- By being able to test your knowledge and reflect back on previous scores, you can see your improvements!
+- I learned so much that it is daunting to try and type it all. 
+- I faced challenges around saving and parsing local data,  acessing the questions array properly, initializing the timer, etc. I faced challenges with almost every part of this assignment.
 
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+## Table of Contents
 
-## Acceptance Criteria 
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [Questions](#questions)
+- [Links](#links)
 
-GIVEN I am taking a code quiz
 
-* WHEN I click the start button
-    * THEN a timer starts and I am presented with a question
-* WHEN I answer a question
-    * THEN I am presented with another question
-* WHEN I answer a question incorrectly
-    * THEN time is subtracted from the clock
-* WHEN all questions are answered or the timer reaches 0
-    * THEN the game is over
-* WHEN the game is over
-    *THEN I can save my initials and score
+## Installation
+
+no installation required
+
+## Contributing   
+
+https://www.youtube.com/watch?v=riDzcEQbX6k
+
+
+## Questions 
+
+To view my Github profile, follow this link: https://github.com/LCatSew
+
+If you have any questions, concerns, or recommendations, you may contact me at lcatsewell@gmail.com  
+
+
+## Links
+
+Here is a link to the deployed application
